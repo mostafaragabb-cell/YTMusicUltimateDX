@@ -98,7 +98,7 @@ jobs:
         id: build_package
         run: |
           cd ${{ github.workspace }}/main
-          make clean package SIDELOADING=1 ADDITIONAL_CFLAGS="-Wno-module-import-in-extern-c"
+          make clean package SIDELOADING=1 ADDITIONAL_CFLAGS="-Wno-module-import-in-extern-c -Wno-error -Wno-vla-cxx-extension"
         env:
           THEOS: ${{ github.workspace }}/theos
 
